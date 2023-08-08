@@ -1,0 +1,28 @@
+package test;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Facebooktest {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+
+		WebDriverManager.chromedriver().setup();
+		
+		WebDriver d =new ChromeDriver();
+		
+		d.manage().window().maximize();
+		d.get("https://www.facebook.com/login/");
+				
+		
+	 d.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("Enter email");
+	 d.findElement(By.xpath("//*[@id=\"pass\"]")).sendKeys("Enter Password");
+	 d.findElement(By.xpath("//*[@id=\"loginbutton\"]")).click(); 
+}
+}
